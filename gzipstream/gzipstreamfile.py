@@ -55,6 +55,10 @@ class _GzipStreamFile(object):
     # io.BufferedReader needs us to appear readable
     return True
 
+  def _checkReadable(self):
+    # similar to readable(), needed for python 2.6
+    return True
+
 
 class GzipStreamFile(io.BufferedReader):
   def __init__(self, stream):
